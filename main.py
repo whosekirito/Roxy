@@ -49,7 +49,9 @@ async def start(_, msg):
             InlineKeyboardButton("📢 Updates", url="https://t.me/Kirito_Bots")
         ]
     ]
-    if msg.chat.type == "private":
+
+    # Reliable check for private chat
+    if msg.chat.id == msg.from_user.id:
         active_users.add(msg.chat.id)
         await msg.reply_photo(
             photo=random.choice(START_IMAGES),
