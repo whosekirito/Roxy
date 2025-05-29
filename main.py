@@ -53,8 +53,14 @@ async def start(_, msg):
         active_users.add(msg.chat.id)
         await msg.reply_photo(
             photo=random.choice(START_IMAGES),
-            caption="<b>˹ Rᴏxʏ Cᴏᴘʏʀɪɢʜᴛ Bʏᴘᴀssᴇʀ ˼</b>\n\n⚡ 
-Wᴇʟᴄᴏᴍᴇ I ᴀᴍ Rᴏxʏ Cᴏᴘʏʀɪɢʜᴛ Bʏᴘᴀssᴇʀ ᴡʜɪᴄʜ ᴅᴇᴛᴇᴄᴛs ᴄᴏᴘʏʀɪɢʜᴛ ᴍᴀᴛᴇʀɪᴀʟ ᴀɴᴅ ᴀᴜᴛᴏᴅᴇʟᴇᴛᴇs ɪᴛ.⚡.   ⚡ Hᴏᴡ ᴛᴏ ᴜsᴇ ᴍᴇ: Aᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ɢɪᴠᴇ ᴍᴏᴅᴇʀᴀᴛᴏʀ ʀɪɢʜᴛs ✨ ",
+            caption="""<b>˹ Rᴏxʏ Cᴏᴘʏʀɪɢʜᴛ Bʏᴘᴀssᴇʀ ˼</b>
+
+⚡ Wᴇʟᴄᴏᴍᴇ! I ᴀᴍ Rᴏxʏ Cᴏᴘʏʀɪɢʜᴛ Bʏᴘᴀssᴇʀ, ᴡʜɪᴄʜ ᴅᴇᴛᴇᴄᴛs ᴄᴏᴘʏʀɪɢʜᴛᴇᴅ ᴍᴀᴛᴇʀɪᴀʟ ᴀɴᴅ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇs ɪᴛ.
+
+⚡ Hᴏᴡ ᴛᴏ ᴜsᴇ ᴍᴇ:
+➤ Aᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ.
+➤ Gɪᴠᴇ ᴍᴇ ᴀᴅᴍɪɴ ʀɪɢʜᴛs ᴡɪᴛʜ ᴅᴇʟᴇᴛᴇ ᴘᴇʀᴍɪssɪᴏɴs.
+""",
             reply_markup=InlineKeyboardMarkup(buttons)
         )
     else:
