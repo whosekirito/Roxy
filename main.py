@@ -9,7 +9,7 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 # Bot configuration
 API_ID = 28837889
 API_HASH = "9d5e9c5b8abcf8b7b930abd259de254e"
-BOT_TOKEN = "your_bot_token"
+BOT_TOKEN = "8142403370:AAGEAoigU4YhsEDYO_AGOpWZ_CU273i0WMo"
 BOT_USERNAME = "Copyright_bypasser_Bot"
 OWNER_ID = 7577853954
 OWNER_USERNAME = "@whosekirito"
