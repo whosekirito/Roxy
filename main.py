@@ -153,31 +153,37 @@ async def handle_edits(_, edited_message: Message):
 # Authorize user
 @app.on_message(filters.command("auth") & filters.group)
 async def authorize_user(_, message: Message):
-    member = await app.get_chat_member(message.chat.id, message.from_user.id)
-    if not (member.status in ("administrator", "creator")):
-        return await message.reply("❌ You must be an admin to authorize users.")
+    try:
+        member = await app.get_chat_member(message.chat.id, message.from_user.id)
+        if member.status not in ("administrator", "creator"):
+            return await message.reply("❌ You must be an admin to authorize users.")
 
-    if message.reply_to_message:
+        if not message.reply_to_message:
+            return await message.reply("ℹ️ Please reply to the user's message whom you want to authorize.")
+
         user_id = message.reply_to_message.from_user.id
         authorized_users.add(user_id)
-        await message.reply(f"✅ User {user_id} authorized.")
-    else:
-        await message.reply("ℹ️ Reply to a user's message to authorize them.")
+        return await message.reply(f"✅ User <code>{user_id}</code> has been authorized.")
+    except Exception as e:
+        await message.reply(f"❌ Error occurred: {e}")
 
 # Unauthorize user
 @app.on_message(filters.command("unauth") & filters.group)
 async def unauthorize_user(_, message: Message):
-    member = await app.get_chat_member(message.chat.id, message.from_user.id)
-    if not (member.status in ("administrator", "creator")):
-        return await message.reply("❌ You must be an admin to unauthorize users.")
+    try:
+        member = await app.get_chat_member(message.chat.id, message.from_user.id)
+        if member.status not in ("administrator", "creator"):
+            return await message.reply("❌ You must be an admin to unauthorize users.")
 
-    if message.reply_to_message:
+        if not message.reply_to_message:
+            return await message.reply("ℹ️ Please reply to the user's message whom you want to unauthorize.")
+
         user_id = message.reply_to_message.from_user.id
         authorized_users.discard(user_id)
-        await message.reply(f"🚫 User {user_id} unauthorized.")
-    else:
-        await message.reply("ℹ️ Reply to a user's message to unauthorize them.")
-
+        return await message.reply(f"🚫 User <code>{user_id}</code> has been unauthorized.")
+    except Exception as e:
+        await message.reply(f"❌ Error occurred: {e}")
+        
 # List authorized users
 @app.on_message(filters.command("authusers") & filters.group)
 async def list_auth_users(_, message: Message):
