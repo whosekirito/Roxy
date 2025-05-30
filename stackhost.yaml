@@ -4,6 +4,9 @@ version: 1.0.0
 
 language: python
 
+build:
+  run: pip install -r requirements.txt
+
 services:
   bot:
     run: python3 main.py
