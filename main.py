@@ -41,7 +41,7 @@ async def start(_, msg):
     buttons = [
         [InlineKeyboardButton("➕ Add Me", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
         [
-            InlineKeyboardButton("💸 Donate", url="https://t.me/Kirito_Bots/10"),
+            InlineKeyboardButton("💸 Donate", url="https://t.me/Kirito_Bots/31"),
             InlineKeyboardButton("👑 Owner", url=f"https://t.me/{OWNER_USERNAME[1:]}")
         ],
         [
