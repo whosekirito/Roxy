@@ -2,6 +2,8 @@ name: anti-copyright-bot
 description: Telegram bot to delete media and prevent copyright claims
 version: 1.0.0
 
+language: python
+
 services:
   bot:
     run: python3 main.py
