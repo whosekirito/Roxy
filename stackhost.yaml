@@ -1,13 +1,14 @@
-name: anti-copyright-bot
-description: Telegram bot to delete media and prevent copyright claims
-version: 1.0.0
+user:
+  name: Whosekirito
+  github: Whosekirito
 
-language: python
+language: "python"
+python_version: "3.10"
 
-services:
-  bot:
-    build:
-      commands:
-        - pip install -r requirements.txt
-    run: python3 main.py
-    restart: always
+commands:
+  build:
+    - "pip install -r requirements.txt"
+  package:
+    - ""
+  start:
+    - "python3 main.py"
